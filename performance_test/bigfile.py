@@ -1,4 +1,5 @@
-from mediawiki_parser import preprocessor, html, raw
+from mediawiki_parser import html, raw
+import tmp_preprocessor as preprocessor
 from pijnu.library.pattern import Pattern
 import cProfile, pstats
 
@@ -27,7 +28,7 @@ def testit(content):
     #return preprocessed_text.treeView()
 
 if __name__ == "__main__":
-    content = open("bigfile.wiki", "r").read()
+    content = open("bioshock.wiki", "r").read()
     cProfile.run('testit(content)', 'results')
     results = pstats.Stats('results')
     results.strip_dirs()
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     results.print_stats()
     results.print_callers('pattern.py', .2)
 
-    f = open("bigfile.html", "w+")
+    f = open("bioshock.html", "w+")
     f.truncate()
     f.write( foo )
 

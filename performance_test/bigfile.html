@@ -21,7 +21,8 @@ import pyalps.plot
 <p>The full Python script is in the tutorials directory at <a href="http://alps.comp-phys.org/static/tutorials2.1.0/intro-01-basics/tutorial-full.py">tutorials/intro-01-basics/tutorial-full.py </a></p>
 <h2> Preparing the input </h2>
 <p>To prepare the input we create a Python lust of dicts containing the simulation parameters:</p>
-<pre><code lang="python">parms = []
+<pre><code lang="python"
+>parms = []
 for t in [1.5,2,2.5]:
    parms.append(
        { 
@@ -54,7 +55,8 @@ for t in [1.5,2,2.5]:
 <h2> Loading the simulation results </h2>
 <h3> Getting the result files </h3>
 <p>Before loading the results we need to get the list of result files. Looking only at files theta we created just now (those starting with the prefix parm1) we get the file list:</p>
-<pre><code lang="python">result_files = pyalps.getResultFiles(prefix='parm1')
+<pre><code lang="python"
+>result_files = pyalps.getResultFiles(prefix='parm1')
 print result_files
 </code></pre>
 <h3> Loading the results </h3>
@@ -72,7 +74,8 @@ print data
 </pre>
 <h3> Plotting in Python using matplotlib </h3>
 <p>and then we plot it using <a href="http://matplotlib.sourceforge.net/">matplotlib</a> and the pyalps.plot module:</p>
-<pre><code lang="python">plt.figure()
+<pre><code lang="python"
+>plt.figure()
 pyalps.plot.plot(plotdata)
 plt.xlim(0,3)
 plt.ylim(0,1)
@@ -81,13 +84,15 @@ plt.show()
 </code></pre>
 <h3> Converting to other formats </h3>
 <p>We can also call functions to convert the dataset to other plot formats, such as text, grace, or gnuplot:</p>
-<pre><code lang="python">print pyalps.plot.convertToText(plotdata)
+<pre><code lang="python"
+>print pyalps.plot.convertToText(plotdata)
 print pyalps.plot.makeGracePlot(plotdata)
 print pyalps.plot.makeGnuplotPlot(plotdata)
 </code></pre>
 <h2> Evaluating data </h2>
 <p>We can easily evaluate functions of the results, e.g. to caluclate the Binder cumulant ratio &lt;math&gt; \langle m^2 \rangle / \langle |m|\rangle ^2 &lt;/math&gt;. We create a new DataSet and fill it in:</p>
-<pre><code lang="python">binder = pyalps.DataSet()
+<pre><code lang="python"
+>binder = pyalps.DataSet()
 binder.props = pyalps.dict_intersect([d[0].props for d in data])
 binder.x = [d[0].props['T'] for d in data]
 binder.y = [d[1].y[0]/(d[0].y[0]*d[0].y[0]) for d in data]
@@ -95,7 +100,8 @@ print binder
 </code></pre>
 <p>The expression d[1].y[0]/(d[0].y[0]*d[0].y[0]) uses jackknife-analysis to calculate correct Monte Carlo error bars for the correlated quantities. </p>
 <p>Finally we make another plot:</p>
-<pre><code lang="python">plt.figure()
+<pre><code lang="python"
+>plt.figure()
 pyalps.plot.plot(binder)
 plt.xlabel('T')
 plt.ylabel('Binder cumulant')
