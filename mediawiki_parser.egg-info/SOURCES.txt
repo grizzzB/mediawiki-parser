@@ -1,0 +1,17 @@
+MANIFEST.in
+README.rst
+mediawiki.pijnu
+preprocessor.pijnu
+setup.py
+mediawiki_parser/__init__.py
+mediawiki_parser/apostrophes.py
+mediawiki_parser/constants.py
+mediawiki_parser/html.py
+mediawiki_parser/preprocessor.py
+mediawiki_parser/raw.py
+mediawiki_parser/text.py
+mediawiki_parser.egg-info/PKG-INFO
+mediawiki_parser.egg-info/SOURCES.txt
+mediawiki_parser.egg-info/dependency_links.txt
+mediawiki_parser.egg-info/requires.txt
+mediawiki_parser.egg-info/top_level.txt

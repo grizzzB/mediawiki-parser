@@ -59,7 +59,7 @@ def convert_info_table(template, info_dict):
                 res.append( cnt_text )
             res = ''.join( res )
             info_dict[title] = res
-            print( "**{}: {}".format(title, res ) )
+            #print( "**{}: {}".format(title, res ) )
 
 
 def substitute_template_parameter(node, values={}):
@@ -114,7 +114,7 @@ def substitute_template(node):
                 if '인용' in page_name or '링크' in page_name: 
                     pass
                 else:
-                    print('*******{}'.format(page_name))
+                    #print('*******{}'.format(page_name))
                     convert_info_table(parameters,info_box)
                 result = str( info_box)
 
